@@ -1,0 +1,25 @@
+var p =[];
+
+function setup() {
+  createCanvas(400, 400);
+  for (var i = 0; i < 100; i ++){
+  p[i] = new pelota();
+  }
+}
+
+function draw() {
+  background(0);
+  for (var i = 0; i < p.length; i ++){
+  p[i].dibujar();
+  p[i].mover();
+  p[i].salirx();
+    
+if(p[i].salirx() == true){
+   p[i].rebotarx();
+  }
+    
+if(p[i].saliry() == true){
+   p[i].rebotary();
+  }
+ }
+}
